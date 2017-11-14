@@ -1,0 +1,20 @@
+{
+    "name": "binarycabin/laravel-uuid",
+    "description": "A wrapper for webpatser/laravel-uuid with additional integration",
+    "type": "library",
+    "require": {
+        "webpatser/laravel-uuid": "2.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeff Kilroy",
+            "email": "jeff@binarycabin.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "BinaryCabin\\LaravelUUID\\": "src/"
+        }
+    }
+}
