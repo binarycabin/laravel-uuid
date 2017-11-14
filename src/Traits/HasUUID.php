@@ -24,4 +24,12 @@ trait HasUUID{
         return \Uuid::generate()->string;
     }
 
+    public function scopeByUUID($query, $uuid){
+        return $query->where($this->getUUIDFieldName(),$uuid);
+    }
+
+    public static function findByUuid($uuid){
+        return static::byUUID($uuid)->first();
+    }
+
 }

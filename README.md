@@ -23,3 +23,15 @@ class Project extends Model
 If your column name is not "uuid", simply add a new property to your model named "uuidFieldName":
 
 protected $uuidFieldName = 'unique_id';
+
+This trait also adds a scope:
+
+```
+\App\Project::byUUID('uuid')->first();
+```
+
+And static find method:
+
+```
+\App\Project::findByUUID('uuid')
+```
