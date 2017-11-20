@@ -2,9 +2,10 @@
 
 namespace BinaryCabin\LaravelUUID\Traits;
 
-trait HasUUID{
-
-    public static function bootHasUUID(){
+trait HasUUID
+{
+    public static function bootHasUUID()
+    {
         static::creating(function($model) {
             $uuidFieldName = $model->getUUIDFieldName();
             if(empty($model->$uuidFieldName)){
@@ -13,22 +14,26 @@ trait HasUUID{
         });
     }
 
-    public function getUUIDFieldName(){
+    public function getUUIDFieldName()
+    {
         if(!empty($this->uuidFieldName)){
             return $this->uuidFieldName;
         }
         return 'uuid';
     }
 
-    public static function generateUUID(){
+    public static function generateUUID()
+    {
         return \Uuid::generate()->string;
     }
 
-    public function scopeByUUID($query, $uuid){
-        return $query->where($this->getUUIDFieldName(),$uuid);
+    public function scopeByUUID($query, $uuid)
+    {
+        return $query->where($this->getUUIDFieldName(), $uuid);
     }
 
-    public static function findByUuid($uuid){
+    public static function findByUuid($uuid)
+    {
         return static::byUUID($uuid)->first();
     }
 
