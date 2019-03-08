@@ -1,4 +1,10 @@
 # Laravel-UUID
+
+[![Build Status](https://travis-ci.org/binarycabin/laravel-uuid.svg?branch=master)](https://travis-ci.org/binarycabin/laravel-uuid)
+[![StyleCI](https://github.styleci.io/repos/110678597/shield?branch=master)](https://github.styleci.io/repos/110678597)
+[![Latest Stable Version](http://img.shields.io/packagist/v/binarycabin/laravel-uuid.svg?style=flat)](https://packagist.org/packages/binarycabin/laravel-uuid)
+[![Total Downloads](http://img.shields.io/packagist/dt/binarycabin/laravel-uuid.svg?style=flat)](https://packagist.org/packages/binarycabin/laravel-uuid)
+
 A wrapper for webpatser/laravel-uuid with additional integration
 
 ```bash
