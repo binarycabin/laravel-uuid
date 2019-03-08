@@ -6,9 +6,9 @@ trait HasUUID
 {
     public static function bootHasUUID()
     {
-        static::creating(function($model) {
+        static::creating(function ($model) {
             $uuidFieldName = $model->getUUIDFieldName();
-            if(empty($model->$uuidFieldName)){
+            if (empty($model->$uuidFieldName)) {
                 $model->$uuidFieldName = static::generateUUID();
             }
         });
@@ -16,9 +16,10 @@ trait HasUUID
 
     public function getUUIDFieldName()
     {
-        if(!empty($this->uuidFieldName)){
+        if (! empty($this->uuidFieldName)) {
             return $this->uuidFieldName;
         }
+
         return 'uuid';
     }
 
@@ -36,5 +37,4 @@ trait HasUUID
     {
         return static::byUUID($uuid)->first();
     }
-
 }
