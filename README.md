@@ -20,12 +20,13 @@ Simply add the "\BinaryCabin\LaravelUUID\Traits\HasUUID;" trait to your model:
 
 namespace App;
 
+use BinaryCabin\LaravelUUID\Traits\HasUUID;
 use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
 
-    use \BinaryCabin\LaravelUUID\Traits\HasUUID;
+    use HasUUID;
 
 }
 ```
@@ -47,3 +48,24 @@ And static find method:
 ```php
 \App\Project::findByUUID('uuid')
 ```
+
+A second trait is available if you use your UUIDs as primary keys:
+
+```php
+<?php
+
+namespace App;
+
+use BinaryCabin\LaravelUUID\Traits\HasUUID;
+use BinaryCabin\LaravelUUID\Traits\UUIDIsPrimaryKey;
+use Illuminate\Database\Eloquent\Model;
+
+class Project extends Model
+{
+
+    use HasUUID, UUIDIsPrimaryKey;
+
+}
+```
+
+It simply tells Laravel that your primary key isn't an auto-incrementing integer, so it will treat the value correctly.
