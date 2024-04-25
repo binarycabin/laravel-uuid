@@ -2,6 +2,8 @@
 
 namespace BinaryCabin\LaravelUUID\Traits;
 
+use Webpatser\Uuid\Uuid;
+
 trait HasUUID
 {
     public static function bootHasUUID()
@@ -25,7 +27,7 @@ trait HasUUID
 
     public static function generateUUID()
     {
-        return \Uuid::generate()->string;
+        return Uuid::generate()->string;
     }
 
     public function scopeByUUID($query, $uuid)
